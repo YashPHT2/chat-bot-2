@@ -5,7 +5,7 @@ from io import StringIO
 import textwrap
 
 # Constants
-GOOGLE_API_KEY = "AIzaSyD_GYcEtxLGsiJ6utCZkXY7FPe0QMyJH7g"  # Replace with your actual API key
+GOOGLE_API_KEY = "AIzaS"  # Replace with your actual API key
 
 def page_setup():
     st.set_page_config(page_title="College Information Assistant", layout="wide")
