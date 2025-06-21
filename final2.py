@@ -4,8 +4,8 @@ from pypdf import PdfReader
 from io import StringIO
 import textwrap
 
-# Constants
-GOOGLE_API_KEY = "AIzaS"  # Replace with your actual API key
+
+GOOGLE_API_KEY = "" 
 
 def page_setup():
     st.set_page_config(page_title="College Information Assistant", layout="wide")
@@ -173,7 +173,7 @@ def main():
         
         st.success("PDFs processed successfully. Ask your questions below.")
 
-        # Input and Submit button container
+       
         with st.container():
             st.markdown("### Ask your question:")
             with st.form(key='question_form', clear_on_submit=True):
@@ -184,7 +184,7 @@ def main():
                         answer = generate_answer(question, text, model, temperature, top_p, max_tokens)
                     st.session_state['history'].append((question, answer))
 
-        # Display chat history
+        
         st.subheader("ANSWERS")
         chat_container = st.container()
         with chat_container:
@@ -194,7 +194,7 @@ def main():
                         st.markdown(f"<div class='chat-item'><strong>You:</strong> {q}</div>", unsafe_allow_html=True)
                         st.markdown(f"<div class='chat-item'><strong>Assistant:</strong> {textwrap.fill(a, width=100)}</div>", unsafe_allow_html=True)
 
-        # Contact Us section
+        
         with st.expander("Contact Us"):
             st.markdown("""
                 <div class='contact-info'>
@@ -204,7 +204,7 @@ def main():
             """, unsafe_allow_html=True)
 
 if __name__ == '__main__':
-    genai.configure(api_key="AIzaSyD_GYcEtxLGsiJ6utCZkXY7FPe0QMyJH7g")
+    genai.configure(api_key="")
     main()
 
 
